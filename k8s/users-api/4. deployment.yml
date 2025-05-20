@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-api
+  namespace: users-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users-api
+  template:
+    metadata:
+      labels:
+        app: users-api
+    spec:
+      containers:
+        - name: users-api
+          image: otusteam.gitlab.yandexcloud.net:5050/devops/devops-2025-01/tsarkovan/users-api:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: users-api-config
+            - secretRef: 
+                name: users-api-secrets
+      imagePullSecrets:
+        - name: gitlab-registry-secret
+      
