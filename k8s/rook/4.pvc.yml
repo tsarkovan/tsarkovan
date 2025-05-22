@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: cephfs-pvc
-  namespace: dashboard-ui
+  namespace: otus-app
 spec:
   accessModes:
     - ReadWriteMany
