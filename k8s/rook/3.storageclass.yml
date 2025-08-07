@@ -8,7 +8,7 @@ volumeBindingMode: Immediate
 parameters:
   clusterID: rook-ceph
   fsName: myfs
-  pool: myfs-datapool
+  pool: datapool
   rootPath: /volumes/myfs
   csi.storage.k8s.io/provisioner-secret-name: rook-csi-cephfs-provisioner
   csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
